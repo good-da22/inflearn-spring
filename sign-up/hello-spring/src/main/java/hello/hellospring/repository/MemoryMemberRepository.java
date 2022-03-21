@@ -4,6 +4,9 @@ import hello.hellospring.domain.Member;
 
 import java.util.*;
 
+//Repository에서 데이터를 저장
+
+//@Repository //스프링 컨테이너 등록
 public class MemoryMemberRepository implements MemberRepository {
 
     private static Map<Long, Member> store = new HashMap<>(); //실무에서는 동시성 문제 발생 가능

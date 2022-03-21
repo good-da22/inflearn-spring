@@ -5,6 +5,8 @@ import hello.hellospring.domain.Member;
 import java.util.List;
 import java.util.Optional;
 
+//Repository에서 데이터를 저장
+
 public interface MemberRepository {
     Member save(Member member); //저장소에 저장
     Optional<Member> findById(Long id); //id로 찾기

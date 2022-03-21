@@ -7,11 +7,14 @@ import java.util.List;
 import java.util.Optional;
 
 //서비스는 비지니스에 의존적으로 네이밍, 개발
+
+//@Service //스프링 컨테이너에 서비스 등록
 public class MemberService {
 //테스트 케이스 단축키 <window> alt + enter
-    //private final MemberRepository memberRepository = new MemoryMemberRepository();
+    //private final MemoryMemberRepository memberRepository = new MemoryMemberRepository();
     private final MemberRepository memberRepository;
 
+//    @Autowired //스프링 빈으로 등록되어 있어야 작동
     public MemberService(MemberRepository memberRepository) { //외부에서 넣어주도록
         this.memberRepository = memberRepository; //di, dependency injection
     }
