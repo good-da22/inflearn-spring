@@ -7,12 +7,13 @@ import org.junit.jupiter.api.AfterEach;
 import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.Test;
 
-import static org.assertj.core.api.Assertions.assertThat;
-import static org.junit.jupiter.api.Assertions.assertThrows;
+import static org.assertj.core.api.Assertions.*;
+import static org.junit.jupiter.api.Assertions.*;
 
 class MemberServiceTest {
     //테스트 코드는 한글로써도 상관없다!
     //빌드시 테스트 코드는 포함되지 않는다.
+    //순수한 단위 테스트(매우 중요!)
 
     MemberService memberService;
     MemoryMemberRepository memberRepository;
@@ -29,7 +30,7 @@ class MemberServiceTest {
     }
 
     @Test
-    void 회원가입() {
+    void 회원가입() throws Exception{
         //테스트 기본 문법
         //given
         Member member = new Member();
@@ -44,7 +45,7 @@ class MemberServiceTest {
     }
 
     @Test
-    public void 중복_회원가입_예외() {
+    public void 중복_회원가입_예외() throws Exception{
         //given
         Member member1 = new Member();
         member1.setName("spring");
@@ -69,13 +70,5 @@ class MemberServiceTest {
 
         assertThat(e.getMessage()).isEqualTo("이미 존재하는 회원입니다.");
         //then
-    }
-
-    @Test
-    void findMembers() {
-    }
-
-    @Test
-    void findOne() {
     }
 }
