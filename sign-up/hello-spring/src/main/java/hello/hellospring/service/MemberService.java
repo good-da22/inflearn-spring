@@ -2,6 +2,7 @@ package hello.hellospring.service;
 
 import hello.hellospring.domain.Member;
 import hello.hellospring.repository.MemberRepository;
+import org.springframework.transaction.annotation.Transactional;
 
 import java.util.List;
 import java.util.Optional;
@@ -9,6 +10,7 @@ import java.util.Optional;
 //서비스는 비지니스에 의존적으로 네이밍, 개발
 
 //@Service //스프링 컨테이너에 서비스 등록
+@Transactional //jpa 사용하기 위한 필수 어노테이션, 서비스 계층
 public class MemberService {
 //테스트 케이스 단축키 <window> alt + enter
     //private final MemoryMemberRepository memberRepository = new MemoryMemberRepository();
