@@ -2,7 +2,6 @@ package hello.hellospring;
 
 import hello.hellospring.repository.MemberRepository;
 import hello.hellospring.service.MemberService;
-import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.context.annotation.Bean;
 import org.springframework.context.annotation.Configuration;
 
@@ -30,7 +29,6 @@ public class SpringConfig {
     //스프링 데이터 jpa 사용 위해
     private final MemberRepository memberRepository;
 
-    @Autowired
     public SpringConfig(MemberRepository memberRepository) {
         this.memberRepository = memberRepository;
     }

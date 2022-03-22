@@ -25,6 +25,8 @@ public class MemberController {
     @Autowired //스프링 컨테이너에서 연결, 의존관계 주입, 생성자 주입(권장)
     public MemberController(MemberService memberService) {
         this.memberService = memberService;
+        //프록시 memberService 확인 가능(AOP 적용 후)
+        System.out.println("memberService = " + memberService.getClass());
     }
 
     @GetMapping("/members/new") //Get 메소드, 주로 조회시
